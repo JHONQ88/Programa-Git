@@ -7,13 +7,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet RecibeDatos - recibe usuario y clave desde index.html y valida.
- */
 public class RecibeDatos extends HttpServlet {
 
     /**
-     * Arma la pagina HTML de respuesta con el mensaje recibido.
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response, String msg)
             throws ServletException, IOException {
@@ -31,8 +34,14 @@ public class RecibeDatos extends HttpServlet {
         }
     }
 
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
-     * Atiende formularios con method="get": lee usuario y clave y valida.
+     * Handles the HTTP <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -47,19 +56,27 @@ public class RecibeDatos extends HttpServlet {
     }
 
     /**
-     * Atiende formularios con method="post": delega en doGet.
+     * Handles the HTTP <code>POST</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         doGet(request, response);
     }
+    // </editor-fold>
 
     /**
-     * Descripcion corta del servlet.
+     * Returns a short description of the servlet.
+     *
+     * @return a String containing servlet description
      */
     @Override
     public String getServletInfo() {
-        return "Servlet RecibeDatos - valida usuario y clave del formulario";
+        return "Short description of the servlet.";
     }
 }
